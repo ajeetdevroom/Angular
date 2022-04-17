@@ -1,0 +1,17 @@
+<form #userdetails="ngForm" (ngSubmit)="signUpformDetails(userdetails.control)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">User Name</label>
+      <!-- bind the control to form using ngModel -->
+      <input ngModel type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Enter your Name" >
+    </div>
+    <div class="mb-3">
+      <label for="mobileNumberField" class="form-label">Mobile Number</label>
+      <input ngModel type="text" name="mobileNumber" class="form-control" id="mobileNumberField" placeholder="Enter Mobile Number">
+    </div>  
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input ngModel type="text"  name="password" class="form-control" id="exampleInputPassword1" placeholder="Create password">
+    </div>   
+  <input type="submit" value="Sign UP" class="btn btn-primary">
+</form>
+<button (click)="signUpformDetails(userdetails.value)">Out Side Button to get form data</button>

@@ -1,0 +1,5 @@
+<p>event key up </p>
+<input #txtBox type="text"(keyup)="getValueOnUP(txtBox.value)" placeholder="enter value and see in console" style="width: 80%;">
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<p>event blur </p>
+<input #txtBoxBlur type="text"(blur)="getValueOnBlur(txtBoxBlur.value)"(mouseleave)="getValueOnBlur('You overed on text box')" placeholder="enter value and see in console" style="width: 80%;">

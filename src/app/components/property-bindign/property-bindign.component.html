@@ -1,0 +1,9 @@
+<p>property-bindign works!</p>
+<p>change attribute value or change property of any html element</p>
+<!-- using interpolation (123 or string) you cann't upadate boolean-->
+<input type="text" name={{name}} disabled={{dis}} >
+<br><br><br><br>
+<!-- using property binding  (123 or string) you can use boolean in update-->
+<input type="text" name="last-name" [value]="name" [disabled]="dis">
+<br><br><br><br>
+<button (click)="changeState()">Disabled text box</button>

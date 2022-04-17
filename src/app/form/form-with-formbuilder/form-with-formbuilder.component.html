@@ -1,0 +1,21 @@
+<p>Name: {{nameControl}}</p>
+<p>Mobile: {{mobileNumberControl}}</p>
+<p>Password: {{passwordControl}}</p>
+  <!-- bind the form  using [formGroup] -->
+  <!-- submit form data field using (ngSubmit)="signUpformDetails() -->
+  <form [formGroup]="signUpForm" (ngSubmit)="signUpformDetails()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">User Name</label>
+      <!-- bind the controler using formControlName="username" -->
+      <input formControlName="username" type="text"  class="form-control" id="exampleInputEmail1" placeholder="Enter your Name" >
+    </div>
+    <div class="mb-3">
+      <label for="mobileNumberField" class="form-label">Mobile Number</label>
+      <input formControlName="mobileNumber" type="text"  class="form-control" id="mobileNumberField" placeholder="Enter Mobile Number">
+    </div>  
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input formControlName="password" type="text"   class="form-control" id="exampleInputPassword1" placeholder="Create password">
+    </div>     
+  <button >Sign Up</button>
+  </form>

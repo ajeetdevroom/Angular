@@ -1,0 +1,29 @@
+<div class="card m-3">
+    <h5 class="card-header">Angular + Reactive Forms - Required Checkbox</h5>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="mobileNumberField" class="form-label">Mobile Number</label>
+                <input formControlName="mobileNumber" type="text" class="form-control" id="mobileNumberField"
+                    placeholder="Enter Mobile Number"
+                    [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors }">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input formControlName="password" type="text" class="form-control" id="exampleInputPassword1"
+                    placeholder="Create password"
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input"
+                    [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+                <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+            </div>
+            <div>
+                <button class="btn btn-primary mr-1">Submit</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>

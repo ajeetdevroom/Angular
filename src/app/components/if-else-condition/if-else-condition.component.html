@@ -1,0 +1,57 @@
+<p>if-else-condition works!</p>
+<h3 *ngIf="show else elseBlock"  style="color: #00ff00;">Now if condition  is true</h3>
+<ng-template #elseBlock>
+    <h3 style="color: #ff0000;">
+        Now else condition is false
+    </h3>
+</ng-template>
+
+<br><br>
+<button (click)="chnageCondition()">Change condition</button>
+
+<!-- another way if else -->
+<h1>another way if else</h1>
+<h3 *ngIf="show2,then ifTure else ifFalse"  >Now if condition is true</h3>
+<ng-template #ifTure>
+    <h3 style="color: #00ff00;">
+         true part
+    </h3>
+</ng-template>
+<ng-template #ifFalse>
+    <h3 style="color: #ff0000;">
+     false part
+    </h3>
+</ng-template>
+
+<br><br>
+<button (click)="chnageCondition2()">Change condition</button>
+<!-- another way if else -->
+<h1>another way if else using string compar</h1>
+<h3 *ngIf="show3=='Ajeet'; then same else other"  >Now if condition is true</h3>
+<ng-template #same>
+    <h3 style="color: #00ff00;">
+        String is Same
+    </h3>
+</ng-template>
+<ng-template #other>
+    <h3 style="color: #ff0000;">
+    Other String
+    </h3>
+</ng-template>
+
+<br><br>
+<button (click)="chnageCondition3()">Change string</button>
+<div *ngIf="display">
+    Ajeet Block
+</div>
+
+<h4>Multipla elseif implement like this (in angular does not have multiple else if condition)</h4>
+<ng-template [ngIf]="color==='green'">
+  <p style="color:green">Ajeet green Block</p>  
+</ng-template>
+<ng-template [ngIf]="color==='red'">
+    <p style="color:red">Ajeet green Block</p>  
+  </ng-template>
+  <ng-template [ngIf]="color==='blue'">
+    <p style="color:blue">Ajeet green Block</p>  
+  </ng-template>

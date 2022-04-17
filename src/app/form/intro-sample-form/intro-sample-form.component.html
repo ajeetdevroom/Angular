@@ -1,0 +1,25 @@
+<!-- templae => class => services => Database -->
+ <!-- define form name like this: #signUpForm="ngForm" -->
+ <!-- submit form value through: getFormData() fun and pass form value through form name: "getFormData(signUpForm.value)" -->
+<form #signUpForm="ngForm" (ngSubmit)="getFormData(signUpForm.value)">
+    <div class="mb-3">
+      <label >User Name</label>
+      <!-- connect form control in ngForm through: ngModel -->
+      <input type="text" name="userName" ngModel >
+    </div>
+    <div class="mb-3">
+      <label >Mobile Number</label>
+      <input type="text" name="mobileNumber" ngModel>
+    </div>   
+    <div class="mb-3">
+        <label >Password</label>
+        <input type="text" name="password" ngModel>
+      </div>   
+  <button>Sign Up</button>
+</form>
+<ul>
+  <!-- get valur through usersDate variable -->
+    <li>User Name: {{usersDate.userName}}</li>
+    <li>Mobile Number: {{usersDate.mobileNumber}}</li>
+    <li>Password: {{usersDate.password}}</li>
+</ul>

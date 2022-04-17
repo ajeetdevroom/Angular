@@ -1,0 +1,26 @@
+<p>reactive-form-validation works!</p>
+  <form [formGroup]="signUpForm" (ngSubmit)="signUpformDetails()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">User Name</label>
+      <input formControlName="username" type="text"  class="form-control" id="exampleInputEmail1" placeholder="Enter your Name" >
+      <!-- nalidate field through getter like this: inValidUser.invalid && inValidUser.touched  -->
+      <span style="color:red" *ngIf="inValidUser && inValidUser.invalid && inValidUser.touched  ">This field is invailid</span>
+    </div>
+    <div class="mb-3">
+        <label for="userEmail" class="form-label">Email ID</label>
+        <input formControlName="userEmail" type="email"  class="form-control" id="userEmail" placeholder="Enter your Name" >
+        <span style="color:red" *ngIf="inValidEmail && inValidEmail.invalid && inValidEmail.touched  ">This field is invailid</span>
+      </div>
+    <div class="mb-3">
+      <label for="mobileNumberField" class="form-label">Mobile Number</label>
+      <input formControlName="mobileNumber" type="text" class="form-control" id="mobileNumberField" placeholder="Enter Mobile Number">
+      <span style="color:red" *ngIf="inValidmobile && inValidmobile.invalid && inValidmobile.touched  ">This field is invailid</span>
+    </div>  
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input formControlName="password" type="text" class="form-control" id="exampleInputPassword1" placeholder="Create password">
+      <span style="color:red" *ngIf="inValidPass && inValidPass.invalid && inValidPass.touched  ">This field is invailid</span>
+    </div>     
+    <button [disabled]="signUpForm.invalid">Sign Up</button>
+  <!-- <button *ngIf="signUpForm.valid">Sign Up</button> -->
+  </form>
